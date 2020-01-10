@@ -8,18 +8,19 @@ function Events() {
 
   useEffect(() => {
     axios
-      .get('http://api-calendar-sum.herokuapp.com/api')
+      .get('https://calendar-sum-be.herokuapp.com/api')
       .then(res => {
-        console.log('RES: ', res)
-        setEvents(res)
+        console.log('RES: ', res.data)
+        setEvents(res.data)
       })
       .catch(err => {
         console.error(err)
       })
-  })
+  }, [])
 
   return (
     <Row gutter={20} className="events-row">
+      <h2>Upcoming events</h2>
       <Col span={8}>
         <EventCard title="School/Work"></EventCard>
       </Col>

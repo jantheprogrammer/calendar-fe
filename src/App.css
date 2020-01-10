@@ -26,10 +26,14 @@ body {
   padding: 20px;
   margin: 0 !important;
 }
+.events-row .ant-table-small {
+  border: none;
+}
 .events-row .ant-card {
   background-color: transparent;
 }
 .events-row .ant-card .ant-card-head {
+  min-height: 42px;
   padding: 0 10px;
   border-bottom: 2px solid #353535;
 }
