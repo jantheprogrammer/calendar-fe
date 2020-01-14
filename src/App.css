@@ -1,5 +1,5 @@
 body {
-  background-color: #cccccc;
+  background-color: #d3d3d3;
 }
 
 .App {
@@ -35,7 +35,7 @@ body {
 .events-row .ant-card .ant-card-head {
   min-height: 42px;
   padding: 0 10px;
-  border-bottom: 2px solid #353535;
+  border-bottom: 2px solid #474747;
 }
 .events-row .ant-card .ant-card-head .ant-card-head-title {
   padding-bottom: 0;
@@ -43,7 +43,7 @@ body {
 }
 .events-row .ant-card .ant-card-body {
   text-align: start;
-  padding-top: 20px;
+  padding: 10px;
 }
 
 .align-right {

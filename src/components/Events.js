@@ -1,37 +1,43 @@
 import React, { useState, useEffect } from 'react'
-import { Col, Row } from 'antd'
+import { Col, Row, Tabs } from 'antd'
 import axios from 'axios'
-import EventCard from './EventCard'
+import EventCards from './EventCards/EventCards'
+import { eventsApi } from '../api'
 
 function Events() {
-  const [events, setEvents] = useState([])
+    const [events, setEvents] = useState([])
+    const { TabPane } = Tabs
 
-  useEffect(() => {
-    axios
-      .get('https://calendar-sum-be.herokuapp.com/api')
-      .then(res => {
-        console.log('RES: ', res.data)
-        setEvents(res.data)
-      })
-      .catch(err => {
-        console.error(err)
-      })
-  }, [])
+    useEffect(() => {
+        axios
+            .get(eventsApi.get)
+            .then(res => {
+                setEvents(res.data)
+            })
+            .catch(err => {
+                console.error(err)
+            })
+    }, [])
 
-  return (
-    <Row gutter={20} className="events-row">
-      <h2>Upcoming events</h2>
-      <Col span={8}>
-        <EventCard title="School/Work"></EventCard>
-      </Col>
-      <Col span={8}>
-        <EventCard title="Free time"></EventCard>
-      </Col>
-      <Col span={8}>
-        <EventCard title="Birthdays"></EventCard>
-      </Col>
-    </Row>
-  )
+    return (
+        <Row gutter={20} className="events-row">
+            <h2>Upcoming events</h2>
+
+            <Tabs defaultActiveKey="1">
+                <TabPane tab="This week" key="1">
+                    <EventCards events={events}></EventCards>
+                </TabPane>
+
+                <TabPane tab="This month" key="2">
+                    <EventCards events={events}></EventCards>
+                </TabPane>
+
+                <TabPane tab="This year" key="3">
+                    <EventCards events={events}></EventCards>
+                </TabPane>
+            </Tabs>
+        </Row>
+    )
 }
 
 export default Events
