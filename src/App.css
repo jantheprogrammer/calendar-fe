@@ -1,49 +1,103 @@
-body {
-  background-color: #d3d3d3;
+.ant-menu-dark.ant-menu-inline .ant-menu-item,
+.ant-menu-dark.ant-menu-inline .ant-menu-submenu-title {
+  border-right: 4px solid transparent;
+}
+
+.ant-menu-inline .ant-menu-item,
+.ant-menu-inline .ant-menu-item:not(:last-child) {
+  margin: 0;
+  margin-bottom: 0;
+}
+
+.ant-menu-dark .ant-menu-item:hover,
+.ant-menu-dark .ant-menu-item-active,
+.ant-menu-dark .ant-menu-submenu-active,
+.ant-menu-dark .ant-menu-submenu-open,
+.ant-menu-dark .ant-menu-submenu-selected,
+.ant-menu-dark .ant-menu-submenu-title:hover {
+  background-color: #857671;
+  color: #4e413b;
+}
+
+.ant-menu.ant-menu-dark .ant-menu-item-selected,
+.ant-menu-submenu-popup.ant-menu-dark .ant-menu-item-selected {
+  color: #312925;
+  background-color: #857671;
+  border-right: 4px solid #ff6d24;
+}
+
+.ant-menu-dark.ant-menu-inline .ant-menu-item,
+.ant-menu-dark.ant-menu-inline .ant-menu-submenu-title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.ant-menu-dark,
+.ant-menu-dark .ant-menu-sub {
+  background-color: transparent;
+}
+
+.ant-menu-dark .ant-menu-item,
+.ant-menu-dark .ant-menu-item-group-title,
+.ant-menu-dark .ant-menu-item > a {
+  color: #4e413b;
+  background-color: #857671;
+}
+
+.ant-menu-dark.ant-menu-inline .ant-menu-submenu-title {
+  background-color: #857671;
+}
+
+* {
+  background-color: #e2ded3;
+  color: #4e413b;
+  font-family: "Roboto Condensed", sans-serif;
 }
 
 .App {
   text-align: center;
 }
 
-.title-row {
-  padding: 20px;
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  border-bottom: 1px solid black;
-}
-.title-row .title {
-  display: flex;
-  justify-content: center;
-}
-.title-row .title h1 {
-  margin: 0;
-  align-self: center;
+.ant-layout-sider,
+.ant-layout-sider-dark {
+  flex: 0 0 320px !important;
+  max-width: 320px !important;
+  min-width: 320px !important;
+  width: 320px !important;
+  background-color: #857671;
 }
 
-.events-row {
-  padding: 20px;
-  margin: 0 !important;
+.ant-layout-sider-children,
+.ant-layout-header {
+  background-color: #857671;
+  font-size: 24px;
+  height: 72px;
 }
-.events-row .ant-table-small {
-  border: none;
+
+.ant-layout-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.events-row .ant-card {
-  background-color: transparent;
+
+.ant-layout-content,
+.ant-layout-footer {
+  background-color: #e2ded3;
 }
-.events-row .ant-card .ant-card-head {
-  min-height: 42px;
-  padding: 0 10px;
-  border-bottom: 2px solid #474747;
+
+.namedays {
+  height: 72px;
+  padding: 4px 0;
 }
-.events-row .ant-card .ant-card-head .ant-card-head-title {
-  padding-bottom: 0;
-  text-align: start;
+.namedays .ant-row {
+  height: 30px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
 }
-.events-row .ant-card .ant-card-body {
-  text-align: start;
-  padding: 10px;
+.namedays .today {
+  height: 34px;
+  font-size: 18px;
 }
 
 .align-right {

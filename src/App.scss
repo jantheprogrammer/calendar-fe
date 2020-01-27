@@ -1,63 +1,65 @@
-body {
-    background-color: #d3d3d3;
+@import './styles/colors.scss';
+@import './styles/menu.scss';
+
+* {
+  background-color: $bg;
+  color: $text;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 .App {
-    text-align: center;
+  text-align: center;
 }
 
-.title-row {
-    padding: 20px;
-    margin-bottom: 20px;
+.ant-layout-sider,
+.ant-layout-sider-dark {
+  flex: 0 0 320px !important;
+  max-width: 320px !important;
+  min-width: 320px !important;
+  width: 320px !important;
+  background-color: $secondary;
+}
+
+.ant-layout-sider-children,
+.ant-layout-header {
+  background-color: $secondary;
+  font-size: 24px;
+  height: 72px;
+}
+
+.ant-layout-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ant-layout-content,
+.ant-layout-footer {
+  background-color: $bg;
+}
+
+.namedays {
+  height: 72px;
+  padding: 4px 0;
+
+  .ant-row {
+    height: 30px;
+    font-size: 16px;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid black;
+  }
 
-    .title {
-        display: flex;
-        justify-content: center;
-
-        h1 {
-            margin: 0;
-            align-self: center;
-        }
-    }
-}
-
-.events-row {
-    padding: 20px;
-    margin: 0 !important;
-
-    .ant-table-small {
-        border: none;
-    }
-
-    .ant-card {
-        background-color: transparent;
-
-        .ant-card-head {
-            min-height: 42px;
-            padding: 0 10px;
-            border-bottom: 2px solid #474747;
-
-            .ant-card-head-title {
-                padding-bottom: 0;
-                text-align: start;
-            }
-        }
-
-        .ant-card-body {
-            text-align: start;
-            padding: 10px;
-        }
-    }
+  .today {
+    height: 34px;
+    font-size: 18px;
+  }
 }
 
 .align-right {
-    text-align: end;
-    padding-right: 20px;
+  text-align: end;
+  padding-right: 20px;
 }
 
 .align-left {
-    text-align: start;
+  text-align: start;
 }
