@@ -27,21 +27,23 @@ function Namedays() {
       })
   })
 
+  // Add cookies of Namday to not call the api more than once per day
+
   return (
-    <div className='namedays'>
-      <Row className='today'>
-        <Col span={14} className='align-right'>
+    <div className="namedays">
+      <Row className="today">
+        <Col span={14} className="align-right">
           Nameday today:
         </Col>
-        <Col span={10} className='align-left'>
+        <Col span={10} className="align-left">
           <b>{nameToday}</b>
         </Col>
       </Row>
-      <Row className='tomorrow'>
-        <Col span={14} className='align-right'>
+      <Row className="tomorrow">
+        <Col span={14} className="align-right">
           Nameday tomorrow:
         </Col>
-        <Col span={10} className='align-left'>
+        <Col span={10} className="align-left">
           <b>{nameTomorrow}</b>
         </Col>
       </Row>

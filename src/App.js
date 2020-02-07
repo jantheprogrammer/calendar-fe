@@ -1,19 +1,18 @@
 import React from 'react'
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import './App.css'
 import Events from './components/Events'
-import Header from './components/Namedays'
-import EventsTable from './components/EventsTable'
 import MyLayout from './components/MyLayout'
 
 function App() {
   return (
-    <div className='App'>
-      {/* <Header />
-      <EventsTable /> */}
-      <MyLayout>
-        <Events />
-      </MyLayout>
-    </div>
+    <Router>
+      <Switch>
+        <MyLayout>
+          <Route path="*" component={Events} />
+        </MyLayout>
+      </Switch>
+    </Router>
   )
 }
 

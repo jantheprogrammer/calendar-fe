@@ -21,15 +21,17 @@
 
 .ant-menu.ant-menu-dark .ant-menu-item-selected,
 .ant-menu-submenu-popup.ant-menu-dark .ant-menu-item-selected {
-  color: darken($text, 10%);
+  color: darken($text, 15%);
   background-color: $secondary;
   border-right: 4px solid $hightlight;
+  transition: border-right 0.5s;
 }
 
 .ant-menu-dark.ant-menu-inline .ant-menu-item,
 .ant-menu-dark.ant-menu-inline .ant-menu-submenu-title {
   font-size: 16px;
   font-weight: 600;
+  text-align: center;
 }
 
 .ant-menu-dark,
