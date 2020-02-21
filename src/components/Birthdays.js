@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react'
-import {Row, DatePicker} from 'antd'
+import {Row, DatePicker, Col} from 'antd'
 import axios from 'axios'
 import moment from 'moment'
+import {months} from '../utils/const'
 
 import {eventsApi} from '../utils/api'
 import MyLayout from './MyLayout'
@@ -13,22 +14,37 @@ function Birthdays() {
   const dateSuffix = 'T00:00:00.0Z'
 
   useEffect(() => {
-    axios
-      .get(eventsApi.get, {
-        params: {
-          to_date: toDate + dateSuffix,
-        },
-      })
-      .then(res => {
-        console.log(res.data)
-        setBirthdays(res.data.filter(e => e.summary === 'Birthday'))
-      })
-      .catch(err => {
-        console.error(err)
-      })
-  }, [toDate])
+    async function prepareBirthdays() {
+      await axios
+        .get(eventsApi.get, {
+          params: {
+            to_date: toDate + dateSuffix,
+          },
+        })
+        .then(res => {
+          let birthdays = res.data.filter(e => e.summary === 'Birthday')
 
-  console.log('b: ', birthdays)
+          birthdays.map((day, index) => {
+            let date = day.date.slice(5, 7)
+            if (date[0] === '0') {
+              day.date = date[1]
+            } else {
+              day.date = date
+            }
+          })
+          console.log(birthdays)
+          setBirthdays(birthdays)
+        })
+        .catch(err => {
+          console.error(err)
+        })
+
+      console.log('in async func: ', birthdays)
+    }
+    prepareBirthdays()
+  }, [])
+
+  console.log('b: ', birthdays, months)
 
   // List of birthdays in whole year and print it in nice way
   // Finish summary of reading in overview in any form
@@ -36,26 +52,40 @@ function Birthdays() {
   return (
     <MyLayout>
       <Row>
-        <div className='heading'>
+        <div className="heading">
           <h2>Birthdays</h2>
         </div>
-        <div className='content'>
-          <DatePicker
+        <div className="content">
+          {/* date pickers commented but ready to use anywhere else */}
+          {/* <DatePicker
             // disabledDate={this.disabledStartDate}
-            format='YYYY-MM-DD'
+            format="YYYY-MM-DD"
             // value={startValue}
-            placeholder='Start'
+            placeholder="Start"
             // onOpenChange={this.handleStartOpenChange}
           />
           <DatePicker
             // disabledDate={this.disabledEndDate}
-            format='YYYY-MM-DD'
+            format="YYYY-MM-DD"
             defaultValue={moment(toDate)}
-            placeholder='End'
+            placeholder="End"
             onChange={(event, value) => setToDate(value)}
             // open={endOpen}
             // onOpenChange={this.handleEndOpenChange}
-          />
+          /> */}
+
+          {months.map((month, index) => (
+            <Col span={12}>
+              <h3>{month}</h3>
+              <ul>
+                {birthdays
+                  .filter(birthday => Number(birthday.date) === index)
+                  .map(name => (
+                    <li>{name.description}</li>
+                  ))}
+              </ul>
+            </Col>
+          ))}
         </div>
       </Row>
     </MyLayout>

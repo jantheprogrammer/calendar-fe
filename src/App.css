@@ -107,4 +107,10 @@
   text-align: start;
 }
 
+.heading {
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 0;
+}
+
 /*# sourceMappingURL=App.css.map */
