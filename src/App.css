@@ -1,6 +1,8 @@
 .ant-menu-dark.ant-menu-inline .ant-menu-item,
 .ant-menu-dark.ant-menu-inline .ant-menu-submenu-title {
   border-right: 4px solid transparent;
+  height: auto;
+  padding: 4px 8px;
 }
 
 .ant-menu-inline .ant-menu-item,
@@ -29,7 +31,7 @@
 
 .ant-menu-dark.ant-menu-inline .ant-menu-item,
 .ant-menu-dark.ant-menu-inline .ant-menu-submenu-title {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 600;
   text-align: center;
 }
@@ -53,7 +55,7 @@
 * {
   background-color: #e2ded3;
   color: #312925;
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Lora";
 }
 
 .ant-layout-sider,
@@ -68,7 +70,7 @@
 .ant-layout-sider-children,
 .ant-layout-header {
   background-color: #9d908c;
-  font-size: 24px;
+  font-size: 26px;
   height: 72px;
 }
 
@@ -89,13 +91,13 @@
 }
 .namedays .ant-row {
   height: 30px;
-  font-size: 16px;
+  font-size: 18px;
   display: flex;
   align-items: center;
 }
 .namedays .today {
   height: 34px;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .align-right {
@@ -108,9 +110,27 @@
 }
 
 .heading {
+  font-size: 20px;
   text-align: center;
   padding: 10px;
   margin-bottom: 0;
+}
+
+.month {
+  padding: 10px 40px;
+}
+.month h3 {
+  font-size: 18px;
+  border-bottom: 1px solid #f05000;
+  font-style: italic;
+}
+.month ul {
+  margin-bottom: 0;
+  padding-left: 20px;
+}
+.month ul li {
+  font-size: 16px;
+  list-style: none;
 }
 
 /*# sourceMappingURL=App.css.map */

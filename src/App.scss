@@ -4,7 +4,7 @@
 * {
   background-color: $bg;
   color: $text;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'Lora';
 }
 
 .ant-layout-sider,
@@ -19,7 +19,7 @@
 .ant-layout-sider-children,
 .ant-layout-header {
   background-color: $secondary;
-  font-size: 24px;
+  font-size: 26px;
   height: 72px;
 }
 
@@ -40,14 +40,14 @@
 
   .ant-row {
     height: 30px;
-    font-size: 16px;
+    font-size: 18px;
     display: flex;
     align-items: center;
   }
 
   .today {
     height: 34px;
-    font-size: 18px;
+    font-size: 20px;
   }
 }
 
@@ -61,7 +61,27 @@
 }
 
 .heading {
+  font-size: 20px;
   text-align: center;
   padding: 10px;
   margin-bottom: 0;
+}
+
+.month {
+  padding: 10px 40px;
+
+  h3 {
+    font-size: 18px;
+    border-bottom: 1px solid darken($hightlight, 10%);
+    font-style: italic;
+  }
+
+  ul {
+    margin-bottom: 0;
+    padding-left: 20px;
+    li {
+      font-size: 16px;
+      list-style: none;
+    }
+  }
 }

@@ -1,23 +1,8 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import {Row} from 'antd'
-import axios from 'axios'
-import {eventsApi} from '../utils/api'
 import MyLayout from './MyLayout'
 
 function Overview() {
-  // const [events, setEvents] = useState([])
-
-  // useEffect(() => {
-  //   axios
-  //     .get(eventsApi.get)
-  //     .then(res => {
-  //       setEvents(res.data)
-  //     })
-  //     .catch(err => {
-  //       console.error(err)
-  //     })
-  // }, [])
-
   return (
     <MyLayout>
       <Row>

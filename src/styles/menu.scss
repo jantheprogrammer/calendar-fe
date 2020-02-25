@@ -1,6 +1,9 @@
 .ant-menu-dark.ant-menu-inline .ant-menu-item,
 .ant-menu-dark.ant-menu-inline .ant-menu-submenu-title {
   border-right: 4px solid transparent;
+  height: auto;
+  padding: 4px 8px;
+  // font-family: 'Roboto Condensed', sans-serif;
 }
 
 .ant-menu-inline .ant-menu-item,
@@ -29,7 +32,7 @@
 
 .ant-menu-dark.ant-menu-inline .ant-menu-item,
 .ant-menu-dark.ant-menu-inline .ant-menu-submenu-title {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 600;
   text-align: center;
 }
