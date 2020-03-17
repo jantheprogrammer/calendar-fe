@@ -3,7 +3,8 @@
   border-right: 4px solid transparent;
   height: auto;
   padding: 4px 8px;
-  // font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'Lato';
+  font-size: 18px;
 }
 
 .ant-menu-inline .ant-menu-item,
@@ -32,7 +33,6 @@
 
 .ant-menu-dark.ant-menu-inline .ant-menu-item,
 .ant-menu-dark.ant-menu-inline .ant-menu-submenu-title {
-  font-size: 20px;
   font-weight: 600;
   text-align: center;
 }

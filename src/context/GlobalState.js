@@ -4,9 +4,7 @@ import axios from 'axios'
 import {eventsApi} from '../utils/api'
 
 // Initial state
-const initialState = {
-  events: [],
-}
+const initialState = []
 
 export const GlobalContext = createContext(initialState)
 
@@ -24,5 +22,9 @@ export const GlobalProvider = ({children}) => {
       })
   }, [])
 
-  return <GlobalContext.Provider value={{events: state.events}}>{children}</GlobalContext.Provider>
+  return (
+    <GlobalContext.Provider value={{events: state}}>
+      {children}
+    </GlobalContext.Provider>
+  )
 }
