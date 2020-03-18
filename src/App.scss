@@ -5,6 +5,7 @@
   background-color: $bg;
   color: $text;
   font-family: 'Lora';
+  font-size: 18px;
 }
 
 .ant-layout-sider,
@@ -40,14 +41,19 @@
 
   .ant-row {
     height: 30px;
-    font-size: 18px;
     display: flex;
     align-items: center;
   }
 
+  .align-left {
+    font-weight: bold;
+  }
+
   .today {
     height: 34px;
-    font-size: 20px;
+    .ant-col {
+      font-size: 20px;
+    }
   }
 }
 

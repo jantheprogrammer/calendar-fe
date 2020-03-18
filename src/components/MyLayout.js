@@ -35,6 +35,7 @@ function MyLayout({children}) {
         >
           <Menu.Item key='overview'>Overview</Menu.Item>
           <Menu.Item key='birthdays'>Birthdays</Menu.Item>
+          <Menu.Item key='tasks'>Tasks</Menu.Item>
           <Menu.Item key='next'>Next</Menu.Item>
         </Menu>
       </Sider>

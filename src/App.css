@@ -56,6 +56,7 @@
   background-color: #e2ded3;
   color: #312925;
   font-family: "Lora";
+  font-size: 18px;
 }
 
 .ant-layout-sider,
@@ -91,12 +92,16 @@
 }
 .namedays .ant-row {
   height: 30px;
-  font-size: 18px;
   display: flex;
   align-items: center;
 }
+.namedays .align-left {
+  font-weight: bold;
+}
 .namedays .today {
   height: 34px;
+}
+.namedays .today .ant-col {
   font-size: 20px;
 }
 

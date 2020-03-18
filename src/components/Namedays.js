@@ -78,7 +78,7 @@ function Namedays() {
           Nameday today:
         </Col>
         <Col span={10} className='align-left'>
-          <b>{nameToday}</b>
+          {nameToday}
         </Col>
       </Row>
       <Row className='tomorrow'>
@@ -86,7 +86,7 @@ function Namedays() {
           Nameday tomorrow:
         </Col>
         <Col span={10} className='align-left'>
-          <b>{nameTomorrow}</b>
+          {nameTomorrow}
         </Col>
       </Row>
     </div>
