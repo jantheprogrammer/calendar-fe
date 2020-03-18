@@ -1,13 +1,18 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useContext} from 'react'
 import {Row, Col} from 'antd'
 import axios from 'axios'
 import {months} from '../utils/const'
 
 import {eventsApi} from '../utils/api'
 import MyLayout from './MyLayout'
+import {GlobalContext} from '../context/GlobalState'
 
 function Birthdays() {
   const [birthdays, setBirthdays] = useState([])
+
+  const events = useContext(GlobalContext)
+
+  // make the back end api for the birthdays
 
   const toDate = '2021-01-01'
   const dateSuffix = 'T00:00:00.0Z'
@@ -35,7 +40,8 @@ function Birthdays() {
 
   const handleBirthdayFiler = (birthday, index) => {
     let month = birthday.date.slice(0, 2)
-    let birthdayIndex = index + 1 < 10 ? String('0' + (index + 1)) : String(index + 1)
+    let birthdayIndex =
+      index + 1 < 10 ? String('0' + (index + 1)) : String(index + 1)
     if (month === birthdayIndex) {
       return (
         <li key={`${birthdayIndex}-${birthday.description}`}>
@@ -50,13 +56,17 @@ function Birthdays() {
     for (let i = 0; i <= 5; i++) {
       birthdaysToRender.push(
         <Row key={i}>
-          <Col offset={4} span={8} className='month'>
+          <Col offset={4} span={8} className="month">
             <h3>{months[i]}</h3>
-            <ul>{birthdays.map(birthday => handleBirthdayFiler(birthday, i))}</ul>
+            <ul>
+              {birthdays.map(birthday => handleBirthdayFiler(birthday, i))}
+            </ul>
           </Col>
-          <Col span={8} className='month'>
+          <Col span={8} className="month">
             <h3>{months[i + 6]}</h3>
-            <ul>{birthdays.map(birthday => handleBirthdayFiler(birthday, i + 6))}</ul>
+            <ul>
+              {birthdays.map(birthday => handleBirthdayFiler(birthday, i + 6))}
+            </ul>
           </Col>
         </Row>
       )
@@ -69,10 +79,10 @@ function Birthdays() {
   return (
     <MyLayout>
       <Row>
-        <div className='heading'>
+        <div className="heading">
           <h2>Birthdays</h2>
         </div>
-        <div className='content'>
+        <div className="content">
           {/* date pickers commented but ready to use anywhere else */}
           {/* <DatePicker
             // disabledDate={this.disabledStartDate}

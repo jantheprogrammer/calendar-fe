@@ -1,8 +1,9 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useContext} from 'react'
 import {Layout, Menu} from 'antd'
 import {Redirect} from 'react-router-dom'
 import {useLocation} from 'react-router'
 
+import {GlobalContext} from '../context/GlobalState'
 import Namedays from './Namedays'
 
 const {Header, Content, Sider} = Layout
@@ -10,6 +11,10 @@ const {Header, Content, Sider} = Layout
 function MyLayout({children}) {
   const [route, setRoute] = useState('/overview')
   const [redirect, setRedirect] = useState(false)
+
+  const context = useContext(GlobalContext)
+
+  console.log('ctx: ', context)
 
   let location = useLocation()
 
